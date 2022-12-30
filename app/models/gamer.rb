@@ -1,0 +1,3 @@
+class Gamer < User
+
+end
