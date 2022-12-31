@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_31_085228) do
+ActiveRecord::Schema.define(version: 2022_12_31_201235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "game_id"
+    t.bigint "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["game_id"], name: "index_cart_items_on_game_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
 
   create_table "game_users", force: :cascade do |t|
     t.bigint "game_id", null: false
@@ -61,6 +78,9 @@ ActiveRecord::Schema.define(version: 2022_12_31_085228) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "games"
+  add_foreign_key "carts", "users"
   add_foreign_key "game_users", "games"
   add_foreign_key "game_users", "users"
   add_foreign_key "games", "users", column: "developer_id"

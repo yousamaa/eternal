@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :games, through: :game_users
   has_many :reviews, dependent: :destroy
+  has_one :cart, dependent: :destroy
 end
