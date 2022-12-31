@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 2022_12_31_071605) do
 
   create_table "game_users", force: :cascade do |t|
     t.bigint "game_id", null: false
-    t.bigint "gamer_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_game_users_on_game_id"
-    t.index ["gamer_id"], name: "index_game_users_on_gamer_id"
+    t.index ["user_id"], name: "index_game_users_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -51,6 +51,6 @@ ActiveRecord::Schema.define(version: 2022_12_31_071605) do
   end
 
   add_foreign_key "game_users", "games"
-  add_foreign_key "game_users", "users", column: "gamer_id"
+  add_foreign_key "game_users", "users"
   add_foreign_key "games", "users", column: "developer_id"
 end

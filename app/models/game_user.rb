@@ -2,5 +2,5 @@
 
 class GameUser < ApplicationRecord
   belongs_to :game
-  belongs_to :gamer
+  belongs_to :user
 end
