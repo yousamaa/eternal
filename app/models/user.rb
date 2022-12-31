@@ -7,4 +7,5 @@ class User < ApplicationRecord
   enum type: { Admin: 'admin', Developer: 'developer', Gamer: 'gamer' }
 
   has_many :games, through: :game_users
+  has_many :reviews, dependent: :destroy
 end
