@@ -1,3 +1,4 @@
-class Gamer < User
+# frozen_string_literal: true
 
+class Gamer < User
 end

@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum type: { Admin: 'admin', Developer: 'developer', Gamer: 'gamer' }
+
+  has_many :games, through: :game_users
 end

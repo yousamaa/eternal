@@ -10,17 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_29_134746) do
+ActiveRecord::Schema.define(version: 2022_12_31_071605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "game_users", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_users_on_game_id"
+    t.index ["user_id"], name: "index_game_users_on_user_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "price", default: 0, null: false
+    t.string "category"
+    t.string "description"
+    t.bigint "developer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["developer_id"], name: "index_games_on_developer_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
     t.string "phone_number", default: "", null: false
-    t.string "type", default: "developer", null: false
+    t.string "type", default: "gamer", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -30,4 +50,7 @@ ActiveRecord::Schema.define(version: 2022_12_29_134746) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "game_users", "games"
+  add_foreign_key "game_users", "users"
+  add_foreign_key "games", "users", column: "developer_id"
 end
