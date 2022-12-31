@@ -4,4 +4,5 @@ class Game < ApplicationRecord
   belongs_to :developer, class_name: 'User'
 
   has_many :users, through: :game_users
+  has_many :reviews, dependent: :destroy
 end
