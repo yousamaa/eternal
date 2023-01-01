@@ -29,14 +29,14 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
     user ||= User.new # guest user (not logged in)
-can :manage, :all  # <---------- TO GIVE TEMPORARY ACCESS TO EVERYTHING FOR EVERYONE
-if user.Admin?
+    can :manage, :all # <---------- TO GIVE TEMPORARY ACCESS TO EVERYTHING FOR EVERYONE
+    if user.Admin?
       can :manage, :all
       can :access, :rails_admin       # only allow admin users to access Rails Admin
       can :manage, :dashboard         # allow access to dashboard
-end
-if user.Gamer?
-      can :manage, User
-end
+    end
+    return unless user.Gamer?
+
+    can :manage, User
   end
 end
