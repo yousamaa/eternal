@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   # devise_for :gamers
   devise_for :users
 
-  resource :developers
+  resource :developers, :gamers, :games, :users
 
   get '/developers/add_game', to: 'developers#add_game'
-  get '/developers/games', to: 'developers#show_games'
+  get '/developers/games', to: 'developers#show_games', as: 'developer_games' 
 end

@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 2023_01_01_120720) do
   end
 
   create_table "cart_items", force: :cascade do |t|
-    t.integer "quantity", default: 1, null: false
-    t.bigint "game_id", null: false
-    t.bigint "cart_id", null: false
+    t.integer "quantity"
+    t.bigint "game_id"
+    t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2023_01_01_120720) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 2023_01_01_120720) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "rating", default: 0, null: false
-    t.string "comment", default: "", null: false
+    t.integer "rating"
+    t.string "comment"
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
     t.datetime "created_at", null: false

@@ -20,7 +20,7 @@ class GamesController < ApplicationController
 
     if @game.save
       flash[:notice] = 'Game was successfully created.'
-      render :show
+      redirect_to '/developers/add_game'
     else
       flash[:alert] = 'Game was not created.'
       render :new
@@ -54,6 +54,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:name, :price, :category, :description, files: [])
+    params.require(:game).permit!
   end
 end
