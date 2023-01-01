@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_01_074329) do
+ActiveRecord::Schema.define(version: 2023_01_01_120720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(version: 2023_01_01_074329) do
     t.index ["developer_id"], name: "index_games_on_developer_id"
   end
 
+  create_table "invitations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "friend_id"
+    t.boolean "confirmed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_invitations_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating", default: 0, null: false
     t.string "comment", default: "", null: false
@@ -107,6 +116,7 @@ ActiveRecord::Schema.define(version: 2023_01_01_074329) do
   add_foreign_key "game_users", "games"
   add_foreign_key "game_users", "users"
   add_foreign_key "games", "users", column: "developer_id"
+  add_foreign_key "invitations", "users"
   add_foreign_key "reviews", "games"
   add_foreign_key "reviews", "users"
 end
