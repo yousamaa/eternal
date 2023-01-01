@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class GamesController < ApplicationController
-  before_action :set_game, only: %i[show edit update destroy]
+  before_action :set_game, only: %i[show edit destroy]
 
   def index
     @games = Game.all
@@ -28,9 +28,12 @@ class GamesController < ApplicationController
   end
 
   def update
+
+    @game = params[:game]
+    @game = Game.find(@game[:id])
     if @game.update(game_params)
       flash[:notice] = 'Game was successfully updated.'
-      render :show
+      redirect_to '/developers/games/' + @game[:id].to_s + '/edit'
     else
       flash[:alert] = 'Game was not updated.'
       render :edit

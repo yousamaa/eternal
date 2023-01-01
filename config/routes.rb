@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resource :developers, :gamers, :games, :users
 
-  get '/developers/add_game', to: 'developers#add_game'
-  get '/developers/games', to: 'developers#show_games', as: 'developer_games' 
+  get '/developers/games/add', to: 'developers#add_game'
+  get '/developers/games', to: 'developers#show_games'
+  get '/developers/games/:id', to: 'developers#game'
+  get '/developers/games/:id/edit', to: 'developers#edit_games'
 end
