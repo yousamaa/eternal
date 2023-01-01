@@ -1,0 +1,11 @@
+development: 
+  cloud_name: "ddchpvt2s"
+  api_key: "551142829869298"
+  api_secret: "Xkqb5rG5clpDEtF4b_likd2pwFo"
+  secure: true
+
+production:
+  cloud_name: "ddchpvt2s"
+  api_key: "551142829869298"
+  api_secret: "Xkqb5rG5clpDEtF4b_likd2pwFo"
+  secure: true

@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :games, through: :game_users
   has_many :reviews, dependent: :destroy
   has_one :cart, dependent: :destroy
+  has_one_attached :avatar
+
+  validates :name, :email, :type, :phone_number, presence: true
 end
