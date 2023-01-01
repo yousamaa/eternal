@@ -1,17 +1,44 @@
-<%= form_with(model: [, game], local: true) do |form| %>
-  <% if game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
-      <ul>
-      <% game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+<div class="panel-body">
+  <%= form_with model: game,local: true do |form| %>
+    <% if game.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>
+      <%= I18n.t("errors.messages.not_saved",
+                 count: game.errors.count,
+                 game: game.class.model_name.human.downcase)
+       %>
+    </strong>
+    <% game.errors.full_messages.each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
   </div>
 <% end %>
+    <div class="field form-group">
+      <br>
+      <%= form.text_field :name, autocomplete: "name", class: "form-control", placeholder: "Name" %>
+    </div>
+
+    <div class="field form-group">
+      <br />
+      <%= form.number_field :price, autocomplete: "price", class: "form-control", placeholder: "Price" %>
+    </div>
+
+    <div class="field form-group">
+      <br>
+      <%= form.text_field :description, autocomplete: "description", class: "form-control", placeholder: "Description" %>
+    </div>
+
+    <div class="field form-group">
+      <br>
+      <%= form.file_field :files, multiple: true %>
+    </div>
+
+    <div class="actions">
+      <br>
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
