@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-class HomeController < ActionController::Base
+class HomeController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index]
   def index; end
-
-  def landing
-
-  end
 end
