@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'home#index'
-  
+
   # devise_for :developers
   # devise_for :gamers
   devise_for :users
@@ -12,5 +12,4 @@ Rails.application.routes.draw do
 
   get '/developers/add_game', to: 'developers#add_game'
   get '/developers/games', to: 'developers#show_games'
-
 end
