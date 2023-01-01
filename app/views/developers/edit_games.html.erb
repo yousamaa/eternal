@@ -1,9 +1,11 @@
 <!-- NON LAYOUT CONTENT -->
 <div class='container' style='text-align: center'>
   <br><br>
-  <h1>Add a Game</h1>
+  <h1>Edit Game</h1>
   <br><br>
-  <%= form_with model: Game, local: true do |f| %>
+  
+  <%= form_for(@game, url: games_path, local: true, method: "patch") do |f| %>
+     <%= f.hidden_field :id %>
     <div class="field form-group" style='min-width: 400px; margin-top:10px'>
     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "Name", style: "background-color: transparent; color: white"%>
   </div>

@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   # devise_for :gamers
   devise_for :users
 
-  resource :developers
-  resources :games
 
-  get '/developers/add_game', to: 'developers#add_game'
+  resource :developers, :gamers, :games, :users
+
+
+  get '/developers/games/add', to: 'developers#add_game'
   get '/developers/games', to: 'developers#show_games'
+
 
   get 'carts/:id' => 'carts#show', as: 'cart'
   delete 'carts/:id' => 'carts#destroy'
@@ -23,4 +25,8 @@ Rails.application.routes.draw do
 
   post 'checkout/create' => 'checkout#create', as: 'checkout_create'
   get 'checkout_success', to: 'checkout#checkout_success'
+
+  get '/developers/games/:id', to: 'developers#game'
+  get '/developers/games/:id/edit', to: 'developers#edit_games'
+
 end

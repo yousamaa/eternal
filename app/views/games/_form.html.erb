@@ -1,3 +1,4 @@
+
 <div class="panel-body">
   <%= form_with model: game,local: true do |form| %>
     <% if game.errors.any? %>
@@ -20,6 +21,7 @@
       <br>
       <%= form.text_field :name, autocomplete: "name", class: "form-control", placeholder: "Name" %>
     </div>
+
 
     <div class="field form-group">
       <br />
