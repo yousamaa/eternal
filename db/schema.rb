@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_31_201235) do
+ActiveRecord::Schema.define(version: 2023_01_01_061329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_12_31_201235) do
     t.bigint "developer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "not_approved", null: false
     t.index ["developer_id"], name: "index_games_on_developer_id"
   end
 
