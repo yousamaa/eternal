@@ -1,4 +1,9 @@
 class DevelopersController < ApplicationController
-  def register
+  def show
+
+  end
+
+  def add_game
+    
   end
 end

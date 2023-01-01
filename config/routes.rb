@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'home#index'
   
+  # devise_for :developers
+  # devise_for :gamers
   devise_for :users
-  devise_for :gamers, only: :registrations
-  devise_for :developers, only: :registrations
 
+  resource :developers
 
-  resources :gamers, :admins, :carts, :orders
-
-  get 'developer/new' => 'developers#register', :as => 'new_developer'
+  get '/developers/add_game', to: 'developers#add_game'
 
 end
