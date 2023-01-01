@@ -8,4 +8,6 @@ class Game < ApplicationRecord
   has_many :users, through: :game_users
   has_many :reviews, dependent: :destroy
   has_many_attached :files
+
+  validates :name, :price, presence: true
 end
