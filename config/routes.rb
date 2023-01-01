@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resource :developers
 
   get '/developers/add_game', to: 'developers#add_game'
+  get '/developers/games', to: 'developers#show_games'
 
 end
