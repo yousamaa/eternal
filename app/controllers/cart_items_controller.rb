@@ -5,8 +5,7 @@ class CartItemsController < ApplicationController
     chosen_game = Game.find(params[:game_id])
 
     if @current_cart.games.include?(chosen_game)
-      @cart_item = @current_cart.cart_items.find_by(game_id: chosen_game)
-      @cart_item.quantity.succ
+      flash[:notice] = 'Item already created!'
     else
       @cart_item = CartItem.new
       @cart_item.cart = @current_cart

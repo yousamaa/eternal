@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_01_171246) do
+ActiveRecord::Schema.define(version: 2023_01_01_120720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2023_01_01_171246) do
   end
 
   create_table "cart_items", force: :cascade do |t|
-    t.integer "quantity", default: 1, null: false
+    t.integer "quantity", default: 1
     t.bigint "game_id", null: false
     t.bigint "cart_id", null: false
     t.datetime "created_at", null: false
@@ -47,18 +47,10 @@ ActiveRecord::Schema.define(version: 2023_01_01_171246) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_carts_on_user_id"
-  end
-
-  create_table "chat_rooms", force: :cascade do |t|
-    t.string "title"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_chat_rooms_on_user_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "game_users", force: :cascade do |t|
@@ -91,16 +83,6 @@ ActiveRecord::Schema.define(version: 2023_01_01_171246) do
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.text "body"
-    t.bigint "user_id"
-    t.bigint "chat_room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "rating", default: 0, null: false
     t.string "comment", default: "", null: false
@@ -131,13 +113,10 @@ ActiveRecord::Schema.define(version: 2023_01_01_171246) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "games"
   add_foreign_key "carts", "users"
-  add_foreign_key "chat_rooms", "users"
   add_foreign_key "game_users", "games"
   add_foreign_key "game_users", "users"
   add_foreign_key "games", "users", column: "developer_id"
   add_foreign_key "invitations", "users"
-  add_foreign_key "messages", "chat_rooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "games"
   add_foreign_key "reviews", "users"
 end
