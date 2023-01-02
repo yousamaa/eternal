@@ -140,7 +140,7 @@ div.content {
 
 <div class="sidebar">
   <div style='padding: 20px; text-align: center'>
-    <h5>User Dashboard</h5>
+    <h5><%= current_user.class %> Dashboard</h5>
   </div>
   <a href="#dashboard"><i class="fa-solid fa-gauge-max" style='margin-right: 10px'></i>  Dashboard</a>
   <a class="active" href="#profile"><i class="fa-solid fa-gauge-max" style='margin-right: 10px'></i> Profile</a>
@@ -169,8 +169,8 @@ div.content {
 <div class="container" style='text-align: center'>
 <br><br><br>
   <div class="card-header">
-    <h1><b>User Profile</b></h1>
-    <p>Edit your gamer profile from here. You can only change your general information.</p>
+    <h1><b><%= current_user.class %> Profile</b></h1>
+    <p>Edit your <%= current_user.class %> profile from here. You can only change your general information.</p>
   </div>
   <div class="row">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
