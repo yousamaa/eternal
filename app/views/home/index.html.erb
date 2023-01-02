@@ -1,5 +1,384 @@
-<% if current_user.nil? %>
-	<%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
-<% else %>
-	<%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %>
-<% end %>
+
+    <!-- ================> Banner section start here <================== -->
+    <section id="home" class="banner">
+        <div class="container">
+            <div class="banner__wrapper">
+                <div class="row">
+                    <div class="col">
+                        <div class="banner__content aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1000">
+                            <h1>Welcome to Eternal</h1>
+                            <p>A platform for gamers and game developers!</p>
+                        </div>
+                        <div class="banner__thumb aos-init aos-animate" data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="swiper banner__slider swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events">
+                                <div class="swiper-wrapper" id="swiper-wrapper-1074cd4ce45959595" aria-live="off" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-2604px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="3 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(400px, 0px, -1600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -7;" data-swiper-slide-index="2">
+                                        <div class="banner__item">
+                                            <img src="/03.png" alt="NFT Item Image">
+                                        </div>
+                                    </div><div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="4 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(350px, 0px, -1400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -6;" data-swiper-slide-index="3">
+                                        <div class="banner__item">
+                                            <img src="/04.png" alt="NFT Item Image">
+                                        </div>
+                                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" role="group" aria-label="5 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(300px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;" data-swiper-slide-index="4">
+                                        <div class="banner__item">
+                                            <img src="/05.png" alt="NFT Item Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-duplicate-active" role="group" aria-label="1 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(250px, 0px, -1000px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -4;" data-swiper-slide-index="0">
+                                        <div class="banner__item">
+                                            <img src="/01.png" alt="NFT Item Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-duplicate-next" role="group" aria-label="2 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(200px, 0px, -800px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -3;" data-swiper-slide-index="1">
+                                        <div class="banner__item">
+                                            <img src="/02.png" alt="NFT Item Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" role="group" aria-label="3 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(150px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -2;" data-swiper-slide-index="2">
+                                        <div class="banner__item">
+                                            <img src="/03.png" alt="NFT Item Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" role="group" aria-label="4 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(100px, 0px, -400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -1;" data-swiper-slide-index="3">
+                                        <div class="banner__item">
+                                            <img src="/04.png" alt="NFT Item Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-visible swiper-slide-prev" role="group" aria-label="5 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(50px, 0px, -200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: 0;" data-swiper-slide-index="4">
+                                        <div class="banner__item">
+                                            <img src="/05.png" alt="NFT Item Image">
+                                        </div>
+                                    </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1); z-index: 1;" data-swiper-slide-index="0">
+                                        <div class="banner__item">
+                                            <img src="/01.png" alt="NFT Item Image">
+                                        </div>
+                                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(-50px, 0px, -200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: 0;" data-swiper-slide-index="1">
+                                        <div class="banner__item">
+                                            <img src="/02.png" alt="NFT Item Image">
+                                        </div>
+                                    </div><div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="3 / 5" style="width: 372px; transition-duration: 0ms; transform: translate3d(-100px, 0px, -400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -1;" data-swiper-slide-index="2">
+                                        <div class="banner__item">
+                                            <img src="/03.png" alt="NFT Item Image">
+                                        </div>
+                                    </div></div>
+                                    
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div style="text-align: center;">
+                <a href="" class="explore-now">
+                    <b>Explore Now</b>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ================> Banner section end here <================== -->
+
+
+
+    <!-- ================> About section start here <================== -->
+    <section class="about padding-top padding-bottom">
+        <div class="container">
+            <div class="about__wrapper">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about__thumb about__thumb--floating aos-init" data-aos="zoom-in-up" data-aos-duration="1000">
+                            <img src="/01(1).png" alt="About Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about__content aos-init" data-aos="fade-left" data-aos-duration="1000">
+                            <h2>Want to play some games?</h2>
+                            <p>Eternal is an amazing platform for gamers in which gamers are able to play live demo of game and if you like the game you can buy and download the full verion of game.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================> About section end here <================== -->
+
+
+
+    <!-- ================> Art x section start here <================== -->
+    <section class="about padding-top padding-bottom bg__gradient">
+        <div class="container">
+            <div class="about__wrapper">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about__content aos-init" data-aos="fade-left" data-aos-duration="1000">
+                            <h2>Are you a game developer?</h2>
+                            <p>Eternal is an amazing platform for game developers in which gamer developers are able to upload their developed games.</p>
+                            <p>Game developers can sell their games to our gaming community and earn money easily.</p>
+                            <p>Uploaded game will be authenticated by admins before shared to our community.</p>
+                            <p>Developers will upload a web based live demo and a full exe of game.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about__thumb aos-init" data-aos="fade-right" data-aos-duration="1000">
+                            <img src="/01(2).png" alt="Art Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================> ArtX section end here <================== -->
+
+
+
+
+    <!-- ================>Roadmap section start here <================== -->
+    <section class="roadmap padding-top padding-bottom" id="roadmap">
+        <div class="container">
+            <div class="section-header aos-init" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Account Creation Roadmap</h2>
+                <p>Entering The Eternal Society means joining a family full of people who believe in the future of Pakistan's gaming industry.</p>
+            </div>
+            <div class="roadmap__wrapper aos-init" data-aos="fade-up" data-aos-duration="1000">
+                <div class="row justify-content-center g-5">
+                    <div class="col-lg-8">
+                        <div class="roadmap__item">
+                            <div class="roadmap__inner">
+                                <div class="roadmap__thumb">
+                                    <span>10%</span>
+                                </div>
+                                <div class="roadmap__content">
+                                    <h4>1. Create An Account</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quam inventore. Illum dolorum dolore, quaerat in consectetur vel voluptas excepturi the same creative Provident?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="roadmap__item">
+                            <div class="roadmap__inner">
+                                <div class="roadmap__thumb roadmap__thumb--bg-2">
+                                    <span>20%</span>
+                                </div>
+                                <div class="roadmap__content">
+                                    <h4>2. Confirm Your Identity</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quam inventore. Illum dolorum dolore, quaerat in consectetur vel voluptas excepturi the same creative Provident?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="roadmap__item">
+                            <div class="roadmap__inner">
+                                <div class="roadmap__thumb roadmap__thumb--bg-3">
+                                    <span>40%</span>
+                                </div>
+                                <div class="roadmap__content">
+                                    <h4>3.Finalize Account</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quam inventore. Illum dolorum dolore, quaerat in consectetur vel voluptas excepturi the same creative Provident?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="roadmap__item">
+                            <div class="roadmap__inner">
+                                <div class="roadmap__thumb roadmap__thumb--bg-4">
+                                    <span>60%</span>
+                                </div>
+                                <div class="roadmap__content">
+                                    <h4>4.Search & Select Games</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quam inventore. Illum dolorum dolore, quaerat in consectetur vel voluptas excepturi the same creative Provident?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="roadmap__item">
+                            <div class="roadmap__inner">
+                                <div class="roadmap__thumb roadmap__thumb--bg-5">
+                                    <span>100%</span>
+                                </div>
+                                <div class="roadmap__content">
+                                    <h4>5.Continue With Payment</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quam inventore. Illum dolorum dolore, quaerat in consectetur vel voluptas excepturi the same creative Provident?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================>Roadmap section end here <================== -->
+
+
+    
+
+
+
+    <!-- ================>Artist section start here <================== 
+    <section class="artist padding-top padding-bottom" id="artist">
+        <div class="container">
+            <div class="artist__wrapper">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="artist__thumb aos-init" data-aos="fade-right" data-aos-duration="1000">
+                            <img src="/01(4).png" alt="Artist Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="artist__content aos-init" data-aos="fade-left" data-aos-duration="1000">
+                            <h2 class="mb-4">Artist- Alex Smith</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempore ratione natus soluta accusamus expedita harum aliquid ullam? Exin, fugale! Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet adipi.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempore ratione natus soluta accusamus expedita harum aliquid ullam? Exin, fugale! Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet adipi.</p>
+                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempore ratione natus soluta accusamus expedita harum aliquid ullam? Exin, fugale! Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet adipi.</p>
+                            <a href="https://www.codexcoder.com/demos/templatemonster/anftyland-demo/robotar/index.html#" class="default-btn default-btn--rounded">
+                                <span>More About The Artist</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     ================>Artist section end here <================== -->
+
+
+
+    <!-- ================>Community section start here <================== -->
+    <section class="community padding-top padding-bottom bg__gradient">
+        <div class="container">
+            <div class="comminity__wrapper">
+                <div class="community__content text-center aos-init" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2>Join The Eternal</h2>
+                    <p>Join a genuine community of gamers and game developers!</p>
+                    <a href="https://www.codexcoder.com/demos/templatemonster/anftyland-demo/robotar/index.html#" class="default-btn default-btn--rounded"><span>Join Our Discord</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================>Community section end here <================== -->
+
+
+
+
+    <!-- ================FAQ section start here <================== -->
+    <section id="faq" class="faq padding-top padding-bottom">
+        <div class="container">
+            <div class="section-header">
+                <h2>Eternal FAQ</h2>
+                <p>Entering The Eternal Society means joining a family full of people who believe in the future of Pakistan's gaming industry.</p>
+            </div>
+            <div class="faq__wrapper">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="accordion__item aos-init" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="accordion__header" id="faq1">
+                                            <button class="accordion__button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBody1" aria-expanded="false" aria-controls="faqBody1"> 01  How To Apply As a Seller? <span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit esse nisi dolor reiciendis consequuntur, nemo veniam, molestias in maxime impedit expedita voluptatem voluptatum consectetur similique recusandae, non quam odio perferendis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion__item aos-init" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="accordion__header" id="faq2">
+                                            <button class="accordion__button" type="button" data-bs-toggle="collapse" data-bs-target="#faqBody2" aria-expanded="true" aria-controls="faqBody2">
+                                                02
+                                                Can we Create An Account For Free? <span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody2" class="accordion-collapse collapse show" aria-labelledby="faq2" data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                We want provide our community with the best quality art from real artist for afordable price
+                                                That is why are a chose mint price of 0.22 ETH (+ gas fee). If you are planning to hold your Bulls you will bee rewarded with FEE Robotar approximatey 6-8 weeks after the official launch 02  What will the mint price be?.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion__item aos-init" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="accordion__header" id="faq3">
+                                            <button class="accordion__button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBody3" aria-expanded="false" aria-controls="faqBody3">
+                                                03
+                                                How To Buy a Game?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                We want provide our community with the best quality art from real artist for afordable price
+                                                That is why are a chose mint price of 0.22 ETH (+ gas fee). If you are planning to hold your Bulls you will bee rewarded with FEE Robotar approximatey 6-8 weeks after the official launch 02  What will the mint price be?.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion__item aos-init" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="accordion__header" id="faq4">
+                                            <button class="accordion__button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBody4" aria-expanded="false" aria-controls="faqBody4">
+                                                04
+                                                Can we Use This as a Social Media Platform?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                We want provide our community with the best quality art from real artist for afordable price
+                                                That is why are a chose mint price of 0.22 ETH (+ gas fee). If you are planning to hold your Bulls you will bee rewarded with FEE Robotar approximatey 6-8 weeks after the official launch 02  What will the mint price be?.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion__item aos-init" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="accordion__header" id="faq5">
+                                            <button class="accordion__button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBody5" aria-expanded="false" aria-controls="faqBody5">
+                                                05
+                                                How do I get whitelisted?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                We want provide our community with the best quality art from real artist for afordable price
+                                                That is why are a chose mint price of 0.22 ETH (+ gas fee). If you are planning to hold your Bulls you will bee rewarded with FEE Robotar approximatey 6-8 weeks after the official launch 02  What will the mint price be?.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion__item aos-init" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="accordion__header" id="faq6">
+                                            <button class="accordion__button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBody6" aria-expanded="false" aria-controls="faqBody6">
+                                                06
+                                                How can I download my Games ?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                We want provide our community with the best quality art from real artist for afordable price
+                                                That is why are a chose mint price of 0.22 ETH (+ gas fee). If you are planning to hold your Bulls you will bee rewarded with FEE Robotar approximatey 6-8 weeks after the official launch 02  What will the mint price be?.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================FAQ section end here <================== -->
+
+
+
+
+  
