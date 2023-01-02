@@ -20,8 +20,8 @@ class DevelopersController < ApplicationController
   private
 
   def set_game
-  @games = Game.find(params[:id]) 
-  @game = Game.find(params[:id])
+    @games = Game.find(params[:id]) 
+    @game = Game.find(params[:id])
   end
 
   def set_developer_games

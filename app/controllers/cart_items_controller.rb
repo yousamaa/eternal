@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class CartItemsController < ApplicationController
   before_action :authenticate_user!, except: %i[create destroy]
 
   def create
     chosen_game = Game.find(params[:game_id])
-
+    byebug
     if @current_cart.games.include?(chosen_game)
       @cart_item = @current_cart.cart_items.find_by(game_id: chosen_game)
       @cart_item.quantity.succ

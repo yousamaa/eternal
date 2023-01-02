@@ -65,6 +65,11 @@
         </div>
 
         <div class="field form-group" style='min-width: 400px; margin-top:10px'>
+          <% f.label :phone_number %><br />
+          <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: "form-control", placeholder: "Phone#", style: "background-color: transparent; color: white" %>
+        </div>
+
+        <div class="field form-group" style='min-width: 400px; margin-top:10px'>
           <% f.label :password %>
           <% if @minimum_password_length %>
           <!--em>(<%= @minimum_password_length %> characters minimum)</em>-->

@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :games, through: :game_users
   has_many :reviews, dependent: :destroy
-  has_one :cart, dependent: :destroy
+  has_many :carts, dependent: :destroy
   has_one_attached :avatar
   has_many :invitations, dependent: :destroy
   has_many :pending_invitations, -> { where confirmed: flase }, class_name: 'Invitation', foreign_key: 'friend_id', dependent: :destroy

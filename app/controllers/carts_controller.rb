@@ -12,7 +12,7 @@ class CartsController < ApplicationController
     if @cart.destroy
       flash[:notice] = 'Cart deleted successfully!'
     else
-      flash[:alert] = 'Cart not deleted!'
+      flash[:alert] = 'Cart not deleted!.'
     end
 
     session[:cart_id] = nil

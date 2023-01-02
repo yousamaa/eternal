@@ -4,16 +4,20 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'home#index'
 
+  get '/chat', to: 'chats#show'
+  resources :tokens, only: [:create]
+
   # devise_for :developers
   # devise_for :gamers
   devise_for :users
+
 
 
   resources :developers, :gamers, :games
 
 
   get '/developers/games/add', to: 'developers#add_game'
-  get '/developers/games', to: 'developers#show_games'
+  get '/developers/games', to: 'developers#show_games', as: 'developer_games'
 
 
   get 'carts/:id' => 'carts#show', as: 'cart'
