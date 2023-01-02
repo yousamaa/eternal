@@ -3,7 +3,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[show edit destroy]
 
-  
+  layout "home"
 
   def index
     @games = Game.all
