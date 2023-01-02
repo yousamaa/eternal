@@ -20,25 +20,32 @@
     <%= f.text_area :description, size: "70x5", autofocus: true, autocomplete: "description", class: "form-control", placeholder: "Description", style: "background-color: transparent; color: white"%>
   </div>
   <br><br>
-  <!--<div style='text-align: left'>
+  <div style='text-align: left'>
     <h2>Upload Game</h2>
   </div>
    <div class="field form-group" style='min-width: 400px; margin-top:10px'>
-    <%= f.file_field :game, autofocus: true, autocomplete: "game", class: "form-control", placeholder: "Game", style: "background-color: transparent; color: white"%>
+    <%= f.file_field :game_file, autofocus: true, autocomplete: "game", class: "form-control", placeholder: "Game", style: "background-color: transparent; color: white"%>
   </div>
   <br><br>
   <div style='text-align: left'>
     <h2>Upload Game Demo</h2>
   </div>
    <div class="field form-group" style='min-width: 400px; margin-top:10px'>
-    <%= f.file_field :game_demo, autofocus: true, autocomplete: "game_demo", class: "form-control", placeholder: "Game Demo", style: "background-color: transparent; color: white"%>
+    <%= f.file_field :demo, autofocus: true, autocomplete: "game_demo", class: "form-control", placeholder: "Game Demo", style: "background-color: transparent; color: white"%>
+  </div>
+  <br><br>
+  <div style='text-align: left'>
+    <h2>Upload Thumbnail</h2>
+  </div>
+   <div class="field form-group" style='min-width: 400px; margin-top:10px'>
+    <%= f.file_field :thumbnail, autofocus: true, autocomplete: "game_demo", class: "form-control", placeholder: "Game Demo", style: "background-color: transparent; color: white"%>
   </div>
   <br><br>
   <div style='text-align: left'>
     <h2>Upload Game Images</h2>
-  </div>-->
+  </div>
    <div class="field form-group" style='min-width: 400px; margin-top:10px'>
-    <%= f.file_field :files, autofocus: true, multiple: true, autocomplete: "files", class: "form-control", accept: 'image/png,image/jpeg', placeholder: "FIles", style: "background-color: transparent; color: white"%>
+    <%= f.file_field :images, autofocus: true, multiple: true, autocomplete: "files", class: "form-control", accept: 'image/png,image/jpeg', placeholder: "FIles", style: "background-color: transparent; color: white"%>
   </div>
 
   <br><br><br>

@@ -3,19 +3,18 @@ class CartItemsController < ApplicationController
 
   def create
     chosen_game = Game.find(params[:game_id])
-
-    if @current_cart.games.include?(chosen_game)
-      @cart_item = @current_cart.cart_items.find_by(game_id: chosen_game)
-      @cart_item.quantity.succ
-    else
+    
+    if !@current_cart.games.include?(chosen_game)
       @cart_item = CartItem.new
       @cart_item.cart = @current_cart
       @cart_item.game = chosen_game
-    end
 
-    @cart_item.save
+      @cart_item.save
     
-    flash[:notice] = 'Item was added in the cart succesfully'
+      flash[:notice] = 'Item was added in the cart succesfully'
+    else
+      flash[:alert] = 'Item was already added in the cart'
+    end
     redirect_to '/games'
   end
 

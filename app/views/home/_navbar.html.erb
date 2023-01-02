@@ -25,12 +25,10 @@
                     <span class="navbar-toggler--icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" aria-current="page" href="#home">Home</a>
-                        <a class="nav-link" href="#roadmap">Roadmap</a>
-                        <a class="nav-link" href="#artist">Explore</a>
-                        <a class="nav-link" href="#team">Games</a>
-                        <a class="nav-link" href="#faq">Faq</a>
+                    <div class="navbar-nav" style='margin-right: 60px'>
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/">Explore</a>
+                        <a class="nav-link" href="/">Games</a>
                     </div>
                     <div class="social-btns">
                         <ul class="social">
@@ -54,12 +52,80 @@
                         <% end %>
 
                         <% if user_signed_in? %>
-                        <a href="/users/sign_in" class="default-btn">
+                        <a href="/gamers/dashboard" class="default-btn">
                             <i class='fa fa-user'></i>
                         </a>
-                        <div href="#" class="notification default-btn dropdown-menu">
-  <span><i class='fa fa-shopping-cart'></i></span>
-  <span class="badge">3</span>
+                        <div class="dropdown">
+  <button class="default-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style='border: none'>
+    <i class='fa fa-shopping-cart'></i><span style='margin-left: 15px;'><b>5</b></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style='width: 250px; background-color: rgb(0,0,0,0.7); color: white'>
+    <li><div class="dropdown-item" style='padding: 20px; color: white' href="#">
+    <div class='container'>
+        <div class='row'>
+        <%= session[:cart_id] %> -1
+        <%= @current_cart.cart_items.each do |items| %>
+            2fjjgjfjkjefoi
+        <%end%>
+            <div class='col-5'>
+                Tekken 7
+            </div>
+            <div class='col-5'>
+                Rs. 1000
+            </div>
+            <div class='col-2'>
+            <a href='/'> x </a>
+            </div>
+        </div>
+    </div>
+    </div></li>
+    <li><div class="dropdown-item" style='padding: 20px; color: white' href="#">
+    <div class='container'>
+        <div class='row'>
+            <div class='col-5'>
+                Tekken 7
+            </div>
+            <div class='col-5'>
+                Rs. 1000
+            </div>
+            <div class='col-2'>
+            <a href='/'> x </a>
+            </div>
+        </div>
+    </div>
+    </div></li>
+    <li><div class="dropdown-item" style='padding: 20px; color: white' href="#">
+    <div class='container'>
+        <div class='row'>
+            <div class='col-5'>
+                Tekken 7
+            </div>
+            <div class='col-5'>
+                Rs. 1000
+            </div>
+            <div class='col-2'>
+            <a href='/'> x </a>
+            </div>
+        </div>
+    </div>
+    </div></li>
+    <li><div class="dropdown-item" style='padding: 20px; color: white' href="#">
+    <div class='container'>
+        <div class='row'>
+            <div class='col-5'>
+                Tekken 7
+            </div>
+            <div class='col-5'>
+                Rs. 1000
+            </div>
+            <div class='col-2'>
+            <a href='/'> x </a>
+            </div>
+        </div>
+    </div>
+    </div></li style='text-align: center'>
+    <li><div class='dropdown-item'><button>Checkout</button></div></li>
+  </ul>
 </div>
                         <% end %>
 

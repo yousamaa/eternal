@@ -3,7 +3,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :current_cart
+  before_action :set_current_cart
+  before_action :set_cart_user
 
   private
 
@@ -12,11 +13,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[name type phone_number])
   end
 
-  def current_cart
-    @current_cart ||= Cart.find_by(id: session[:cart_id])
-    return @current_cart unless @current_cart.nil?
+  def set_current_cart
+    if session[:cart_id]
+        @current_cart = Cart.find(session[:cart_id])
+    else
+      @current_cart = Cart.create
+      session[:cart_id] = @current_cart.id
+    end
+  end
 
-    @current_cart = Cart.create
-    session[:cart_id] = @current_cart.id
+  def set_cart_user
+    @current_cart.user = current_user unless current_user.nil?
+    @current_cart.save
   end
 end

@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  resources :developers, :gamers, :games
-
+resources :gamers, :games
+resource :developers
 
   get '/developers/games/add', to: 'developers#add_game'
   get '/developers/games', to: 'developers#show_games'
 
+  get '/admin/dashboard', to: 'admins#dashboard'
 
   get 'carts/:id' => 'carts#show', as: 'cart'
   delete 'carts/:id' => 'carts#destroy'
