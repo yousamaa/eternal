@@ -5,7 +5,7 @@ class CartItemsController < ApplicationController
 
   def create
     chosen_game = Game.find(params[:game_id])
-    byebug
+
     if @current_cart.games.include?(chosen_game)
       @cart_item = @current_cart.cart_items.find_by(game_id: chosen_game)
       @cart_item.quantity.succ
@@ -16,9 +16,7 @@ class CartItemsController < ApplicationController
     end
 
     @cart_item.save
-    
-    flash[:notice] = 'Item was added in the cart succesfully'
-    redirect_to '/games'
+    redirect_to cart_path(current_cart)
   end
 
   def destroy

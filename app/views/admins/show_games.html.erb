@@ -1,0 +1,90 @@
+<!-- NON LAYOUT CONTENT -->
+<div class='container' style='text-align: center'>
+  <br><br>
+  <h1>Games Published By You</h1>
+  <p>This is the library of the games published by you.</p>
+
+
+  <br><br><br>
+  
+  <button onclick="location.href = '/developers/games/add';" style="min-width: 20%; padding-top: 10px; padding-bottom: 10px;   background-image: linear-gradient(to right, #8800cc , #cc66ff); border: none; border-radius: 50px">Add New Games</button>
+  <br><br><br><br>
+  <div class='container'>
+    <div class='row'>
+    <% @games.each do |game| %>
+       <div class='col-sm-3' style='margin-top: 30px;'>
+         <div class="card" style="width: 18rem; background-color: transparent; border: none; box-shadow: 0px 0px 15px #8800cc; height: 400px">
+  <img class="card-img-top" src="https://cdn.akamai.steamstatic.com/steam/apps/580020/capsule_616x353.jpg?t=1637000454" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= game.name %></h5>
+    <p class="card-text" style='height: 100px'><%= truncate(game.description, :length => 100) %></p>
+    <a href="/developers/games/<%= game.id %>" class="btn btn-primary" style='border-radius : 20px; background-color: transparent; color: white; border: 1px solid white; padding-left: 20px; padding-right: 20px'>View</a>
+  </div>
+</div>
+      </div>
+    <%end%>
+      <div class='col-sm-3' style='margin-top: 30px'>
+         <div class="card" style="width: 18rem; background-color: transparent; border: none; box-shadow: 0px 0px 15px #8800cc;">
+  <img class="card-img-top" src="https://cdn.akamai.steamstatic.com/steam/apps/580020/capsule_616x353.jpg?t=1637000454" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Tekken 7</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="" class="btn btn-primary" style='border-radius : 20px; background-color: transparent; color: white; border: 1px solid white; padding-left: 20px; padding-right: 20px'>View</a>
+  </div>
+</div>
+      </div>
+      <div class='col-sm-3' style='margin-top: 30px'>
+         <div class="card" style="width: 18rem; background-color: transparent; border: none; box-shadow: 0px 0px 15px #8800cc;">
+  <img class="card-img-top" src="https://cdn.akamai.steamstatic.com/steam/apps/580020/capsule_616x353.jpg?t=1637000454" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Tekken 7</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary" style='border-radius : 20px; background-color: transparent; color: white; border: 1px solid white; padding-left: 20px; padding-right: 20px'>View</a>
+  </div>
+</div>
+      </div>
+      <div class='col-sm-3' style='margin-top: 30px'>
+         <div class="card" style="width: 18rem; background-color: transparent; border: none; box-shadow: 0px 0px 15px #8800cc;">
+  <img class="card-img-top" src="https://cdn.akamai.steamstatic.com/steam/apps/580020/capsule_616x353.jpg?t=1637000454" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Tekken 7</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary" style='border-radius : 20px; background-color: transparent; color: white; border: 1px solid white; padding-left: 20px; padding-right: 20px'>View</a>
+  </div>
+</div>
+      </div>
+      <div class='col-sm-3' style='margin-top: 30px'>
+         <div class="card" style="width: 18rem; background-color: transparent; border: none; box-shadow: 0px 0px 15px #8800cc;">
+  <img class="card-img-top" src="https://cdn.akamai.steamstatic.com/steam/apps/580020/capsule_616x353.jpg?t=1637000454" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Tekken 7</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary" style='border-radius : 20px; background-color: transparent; color: white; border: 1px solid white; padding-left: 20px; padding-right: 20px'>View</a>
+  </div>
+</div>
+      </div>
+      <div class='col-sm-3' style='margin-top: 30px'>
+         <div class="card" style="width: 18rem; background-color: transparent; border: none; box-shadow: 0px 0px 15px #8800cc;">
+  <img class="card-img-top" src="https://cdn.akamai.steamstatic.com/steam/apps/580020/capsule_616x353.jpg?t=1637000454" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Tekken 7</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary" style='border-radius : 20px; background-color: transparent; color: white; border: 1px solid white; padding-left: 20px; padding-right: 20px'>View</a>
+  </div>
+</div>
+      </div>
+      <div class='col-sm-3' style='margin-top: 30px'>
+         <div class="card" style="width: 18rem; background-color: transparent; border: none; box-shadow: 0px 0px 15px #8800cc;">
+  <img class="card-img-top" src="https://cdn.akamai.steamstatic.com/steam/apps/580020/capsule_616x353.jpg?t=1637000454" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Tekken 7</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary" style='border-radius : 20px; background-color: transparent; color: white; border: 1px solid white; padding-left: 20px; padding-right: 20px'>View</a>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br>
+</div>
+<!-- FINISH NON LAYOUT CONTENT -->

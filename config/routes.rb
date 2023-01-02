@@ -13,7 +13,10 @@ Rails.application.routes.draw do
 
 
 
-  resources :developers, :gamers, :games
+  resources :developers, :gamers, :admins, :games
+
+  get '/admins/games', to: 'admins#show_games', as: 'admin_games'
+  get '/admins/games/:id', to: 'admins#game'
 
 
   get '/developers/games/add', to: 'developers#add_game'
