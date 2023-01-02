@@ -1,73 +1,331 @@
+<style>
+            body {
+                color: #b3b3b3;
+                font-size: 1rem;
+                line-height: 1.7;
+                font-family: "Oxanium", cursive;
+                background-color: #060826;
+            }
+            
+            
+            .card {
+                background-color: #fff;
+                border: none;
+                border-radius: 10px;
+                width: 190px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+            }
+            
+            .image-container {
+                position: relative
+            }
+            
+            .thumbnail-image {
+                border-radius: 10px !important
+            }
+            
+            .discount {
+                background-color: red;
+                padding-top: 1px;
+                padding-bottom: 1px;
+                padding-left: 4px;
+                padding-right: 4px;
+                font-size: 10px;
+                border-radius: 6px;
+                color: #fff
+            }
+            
+            .wishlist {
+                height: 25px;
+                width: 25px;
+                background-color: #eee;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+            }
+            
+            .first {
+                position: absolute;
+                width: 100%;
+                padding: 9px
+            }
+            
+            .dress-name {
+                font-size: 13px;
+                font-weight: bold;
+                width: 75%
+            }
+            
+            .new-price {
+                font-size: 13px;
+                font-weight: bold;
+                color: red
+            }
+            
+            .old-price {
+                font-size: 8px;
+                font-weight: bold;
+                color: grey
+            }
+            
+            .btn {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                padding: 3px
+            }
+            
+            .creme {
+                background-color: #fff;
+                border: 2px solid grey
+            }
+            
+            .creme:hover {
+                border: 3px solid grey
+            }
+            
+            .creme:focus {
+                background-color: grey
+            }
+            
+            .red {
+                background-color: #fff;
+                border: 2px solid red
+            }
+            
+            .red:hover {
+                border: 3px solid red
+            }
+            
+            .red:focus {
+                background-color: red
+            }
+            
+            .blue {
+                background-color: #fff;
+                border: 2px solid #40C4FF
+            }
+            
+            .blue:hover {
+                border: 3px solid #40C4FF
+            }
+            
+            .blue:focus {
+                background-color: #40C4FF
+            }
+            
+            .darkblue {
+                background-color: #fff;
+                border: 2px solid #01579B
+            }
+            
+            .darkblue:hover {
+                border: 3px solid #01579B
+            }
+            
+            .darkblue:focus {
+                background-color: #01579B
+            }
+            
+            .yellow {
+                background-color: #fff;
+                border: 2px solid #FFCA28
+            }
+            
+            .yellow:hover {
+                border-radius: 3px solid #FFCA28
+            }
+            
+            .yellow:focus {
+                background-color: #FFCA28
+            }
+            
+            .item-size {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background: #fff;
+                border: 1px solid grey;
+                color: grey;
+                font-size: 10px;
+                text-align: center;
+                align-items: center;
+                display: flex;
+                justify-content: center
+            }
+            
+            .rating-star {
+                font-size: 10px !important
+            }
+            
+            .rating-number {
+                font-size: 10px;
+                color: grey
+            }
+            
+            .buy {
+                font-size: 12px;
+                color: purple;
+                font-weight: 500
+            }
+            
+            .voutchers {
+                background-color: #fff;
+                border: none;
+                border-radius: 10px;
+                width: 190px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                overflow: hidden
+            }
+            
+            .voutcher-divider {
+                display: flex
+            }
+            
+            .voutcher-left {
+                width: 60%
+            }
+            
+            .voutcher-name {
+                color: grey;
+                font-size: 9px;
+                font-weight: 500
+            }
+            
+            .voutcher-code {
+                color: red;
+                font-size: 11px;
+                font-weight: bold
+            }
+            
+            .voutcher-right {
+                width: 40%;
+                background-color: purple;
+                color: #fff
+            }
+            
+            .discount-percent {
+                font-size: 12px;
+                font-weight: bold;
+                position: relative;
+                top: 5px
+            }
+            
+            .off {
+                font-size: 14px;
+                position: relative;
+                bottom: 5px
+            }
+        </style>
+    </header>
+    <!-- ================> header section end here <================== -->
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><strong><%= @game.name %></strong></h3>
-  </div>
-  <div class="panel-body">
-    <strong>Price: </strong>
-    <%= number_to_currency(@game.price) %>
-    <br><br>
-    <strong>Description: </strong>
-    <%= @game.description %>
-      
-      <% if @game.images.count > 0 %>
-        <br><br>
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <% (@game.images.count).times do |i| %>
-            <li data-target="#carousel-example-generic" data-slide-to="<% i %>" class="active"></li>
-          <% end %>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <% counter=1 %>
-          <% (0...@game.images.count).each do |image| %>
-            <% if counter == 1%>
-              <div class="item active">
-                <%= image_tag(@game.images[image]) %>
-                <div class="carousel-caption">
+
+
+    <!-- ================> Banner section start here <================== -->
+    <section id="home" class="banner">
+        <div class="container">
+            <div class="banner__wrapper">
+                <div class="row">
+                    <div class="col">
+                        <div class="banner__content aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1000">
+                            <h1>Product Description</h1>
+                        </div>
+
+                    </div>
                 </div>
-              </div>
-            <% else %>
-              <div class="item">
-                <%= image_tag(@game.images[image]) %>
-                <div class="carousel-caption">
-                </div>
-              </div>
-            <% end %>
-            <% counter = counter + 1 %>
-          <% end %>
+            </div>
+            <br><br>
+            <div style="text-align: center;">
+                <a href="" class="explore-now">
+                    <b>Login Now</b>
+                </a>
+            </div>
         </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    <% end %>
-    <br><br>
-    <div class="btn-group">
-      <div style="display:flex">
-        <% if @game.developer_id != current_user.id %>
-          <div>
-            <%= button_to "Add to cart", cart_items_path(:game_id => @game.id), remote: true, class: "btn btn-success" %>  
-          </div>
-        <% end %>
-        <% if @game.developer_id == current_user.id %>
-          <div style="margin-left:5px">
-            <%= link_to "Edit Game", edit_game_path(@game), class: "btn btn-info" %>
-          </div>
-          <div style="margin-left:5px">
-            <%= link_to "Delete Game", @game, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
+    <!-- ================> Banner section end here <================== -->
 
+    <style>
+        ul > li{margin-right:25px;font-weight:lighter;cursor:pointer}
+li.active{border-bottom:3px solid silver;}
+
+.item-photo{display:flex;justify-content:center;align-items:center;border-right:1px solid #f6f6f6;}
+.menu-items{list-style-type:none;font-size:11px;display:inline-flex;margin-bottom:0;margin-top:20px}
+.btn-success{width:100%;border-radius:0;}
+.section{width:100%;margin-left:-15px;padding:2px;padding-left:15px;padding-right:15px;background:#f8f9f9}
+.title-price{margin-top:30px;margin-bottom:0;color:black}
+.title-attr{margin-top:0;margin-bottom:0;color:black;}
+.btn-minus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-right:0;}
+.btn-plus{cursor:pointer;font-size:7px;display:flex;align-items:center;padding:5px;padding-left:10px;padding-right:10px;border:1px solid gray;border-radius:2px;border-left:0;}
+div.section > div {width:100%;display:inline-flex;}
+div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-right:5px;max-width:18%;text-align:center;}
+.attr,.attr2{cursor:pointer;margin-right:5px;height:20px;font-size:10px;padding:2px;border:1px solid gray;border-radius:2px;}
+.attr.active,.attr2.active{ border:1px solid orange;}
+
+@media (max-width: 426px) {
+    .container {margin-top:0px !important;}
+    .container > .row{padding:0 !important;}
+    .container > .row > .col-xs-12.col-sm-5{
+        padding-right:0 ;    
+    }
+    .container > .row > .col-xs-12.col-sm-9 > div > p{
+        padding-left:0 !important;
+        padding-right:0 !important;
+    }
+    .container > .row > .col-xs-12.col-sm-9 > div > ul{
+        padding-left:10px !important;
+        
+    }            
+    .section{width:104%;}
+    .menu-items{padding-left:0;}
+}
+    </style>
+
+    <div class="container">
+        <div class="row">
+           <div class="col-xs-4 item-photo">
+                <img style="width:100%;" src="/maxresdefault.jpg" />
+            </div>
+            <div class="col-xs-5" style="border:0px solid gray">
+                <!-- Datos del vendedor y titulo del producto --><br><br>
+                <h3><%= @game.name %></h3>    
+                <h5 style="color:#337ab7">Category: <a href="#"><%= @game.category %></a> · <small style="color:#337ab7">(8 others)</small></h5>
+    
+                <!-- Precios -->
+                <h6 class="title-price"><small style="color: white;">PRICE</small></h6>
+                <h3 style="margin-top:0px;">Rs. <%= @game.price %></h3>
+    
+                <!-- Detalles especificos del producto -->
+                <div style="text-align: center;">
+                    <button style="width: 50%; padding: 20px; border-radius: 50px; font-size: 40px; color: white; background-color: transparent; border: 3px white solid;">Play Demo</button>
+                </div>                                        
+            </div>                              
+    
+            <div class="col-xs-9">
+                <ul class="menu-items">
+                    <li class="active">Description</li>
+                </ul>
+                <div style="width:100%;border-top:1px solid silver">
+                    <p style="padding:15px;">
+                        <small>
+                            <%= @game.description %>
+                        </small>
+                    </p>
+
+                </div>
+            </div>		
+        </div>
+    </div>        
+    
+           <!-- Detalles especificos del producto -->
+           <div style="text-align: center; margin-top: 100px;">
+            <button style="width: 50%; padding: 20px; border-radius: 50px; font-size: 40px; color: white; background-color: transparent; border: 3px white solid;">Add To Cart</button>
+        </div>         
+        
+        <br><br><br><br>
+    
+    
+
+    

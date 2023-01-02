@@ -16,7 +16,9 @@ class CartItemsController < ApplicationController
     end
 
     @cart_item.save
-    redirect_to cart_path(current_cart)
+    
+    flash[:notice] = 'Item was added in the cart succesfully'
+    redirect_to '/games'
   end
 
   def destroy

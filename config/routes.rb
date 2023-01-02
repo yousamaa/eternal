@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  resource :developers, :gamers
-  resources :games
+
+  resources :developers, :gamers, :games
+
 
   get '/developers/games/add', to: 'developers#add_game'
   get '/developers/games', to: 'developers#show_games', as: 'developer_games'
